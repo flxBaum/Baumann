@@ -50,6 +50,7 @@ int main(){
       if(data == "nan" || data == "-nan" || data == "inf" || data == "-inf") continue;
       if( std::stol(data) <= 0.) continue;
 
+      //sum up logarithmic values of loc1 and loc2
       if(loc == 1){
         val1 += log( std::stol(data) );
         loc1++;
@@ -68,6 +69,7 @@ int main(){
   }
   file.close();
 
+  //geometric mean of loc1 and loc2
   mean1 = exp(val1/loc1);
   mean2 = exp(val2/loc2);
 
